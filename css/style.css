@@ -146,27 +146,3 @@ h2 {
     margin: 0 auto;
     font-size: 1.2rem;
 }
-
-
-#contact {
-    background-color: var(--oxford-navy);
-    color: var(--mint-cream);
-    text-align: center;
-    padding-bottom: 6rem;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--powder-blue);
-    color: var(--prussian-blue);
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 2rem;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: var(--mint-cream);
-}
