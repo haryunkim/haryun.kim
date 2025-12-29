@@ -34,8 +34,21 @@ nav a {
     font-size: 1.1rem;
     transition: color 0.3s;
 }
+
 nav a:hover { color: var(--powder-blue); }
 
+h1 {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+#intro p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
 
 section {
     padding: 5rem 2rem;
@@ -144,4 +157,70 @@ h2 {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.2rem;
+}
+
+#contact {
+    background-color: var(--oxford-navy);
+    color: var(--mint-cream);
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 3rem auto 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--mint-cream);
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--prussian-blue);
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--powder-blue);
+    outline: none;
+}
+
+textarea.form-input {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--powder-blue);
+    color: var(--prussian-blue);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.btn:hover {
+    background-color: var(--mint-cream);
 }
