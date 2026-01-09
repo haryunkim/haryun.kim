@@ -5,6 +5,9 @@
     --powder-blue: #8da9c4;
     --mint-cream: #eef4ed;
     --white: #ffffff;
+    --top-strip-height: 12px;
+    --nav-content-height: 64px;
+    --nav-padding-x: 2rem;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,27 +18,67 @@ body {
 }
 
 nav {
-    background-color: var(--prussian-blue);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    gap: 30px;
-}
-nav a {
-    text-decoration: none;
-    color: var(--mint-cream);
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: calc(var(--top-strip-height) + var(--nav-content-height));
+  background: transparent;
+
+  transition: background-color 200ms ease, box-shadow 200ms ease, height 200ms ease;
 }
 
-nav a:hover { color: var(--powder-blue); }
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: var(--top-strip-height);
+  background-color: var(--prussian-blue);
+
+  transition: height 200ms ease;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  height: var(--nav-content-height);
+  margin-top: var(--top-strip-height);
+  padding: 0 var(--nav-padding-x);
+  transition: margin-top 200ms ease;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--prussian-blue);
+  font-weight: 700;
+  font-size: 1.35rem;
+  transition: color 200ms ease;
+}
+
+
+nav.scrolled {
+  height: var(--nav-content-height);
+  background-color: var(--prussian-blue);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+nav.scrolled::before {
+  height: 0;
+}
+
+nav.scrolled ul {
+  margin-top: 0;
+}
+
+nav.scrolled a {
+  color: var(--mint-cream);
+}
+
+nav.scrolled a:hover {
+  color: var(--powder-blue);
+}
 
 h1 {
     font-size: 2.7rem;
@@ -52,6 +95,7 @@ h1 {
 
 section {
     padding: 5rem 2rem;
+    scroll-margin-top: calc(var(--top-strip-height) + var(--nav-content-height) + 16px);
 }
 
 h2 {

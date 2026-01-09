@@ -1,3 +1,4 @@
+// handle form submission for contact form
 var form = document.getElementById("contact-form");
 
 async function handleSubmit(event) {
@@ -29,3 +30,15 @@ async function handleSubmit(event) {
     });
 };
 form.addEventListener("submit", handleSubmit);
+
+// handle navbar scroll behavior
+const navbar = document.getElementById("navbar");
+const SCROLL_THRESHOLD = 40;
+
+function updateNavbar() {
+  if (!navbar) return;
+  navbar.classList.toggle("scrolled", window.scrollY > SCROLL_THRESHOLD);
+}
+
+updateNavbar();
+window.addEventListener("scroll", updateNavbar, { passive: true });
